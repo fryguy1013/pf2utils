@@ -1,0 +1,20 @@
+/* html,
+body,
+#root {
+  padding: 0;
+  margin: 0.5em;
+  height: 100%;
+  line-height: 1.5;
+  font-size: 16px;
+  font-family: Helvetica, sans-serif;
+  color: #000;
+  background-color: #f3f7f9;
+} */
+
+body { margin: 1em; }
+
+.active_difficulty {
+  font-weight: bold;
+}
+
+.ui.pagination.menu .active.item { background: #0E6EB8; }
