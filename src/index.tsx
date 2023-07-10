@@ -1,21 +1,13 @@
 import * as React from "react";
-import { render } from "react-dom";
-import { Provider } from "react-redux";
-import configureStore from "./store";
-import * as serviceWorker from './serviceWorker'
+import { createRoot } from "react-dom/client";
 import { createBrowserHistory } from 'history'
 import { About } from './about'
 import './site.css';
 
-import { ConnectedRouter } from "connected-react-router";
-import { Switch, Route, Redirect } from "react-router";
-import { NavLink } from "react-router-dom";
-import EncounterBuilder from "./encounter/EncounterBuilder";
+import { Routes, Route, Navigate } from "react-router";
+import { BrowserRouter, NavLink } from "react-router-dom";
+import { EncounterBuilder } from "./encounter/EncounterBuilder";
 import { Menu, Header, Container } from "semantic-ui-react";
-
-export const history = createBrowserHistory({ basename: '/pf2utils' });
-
-const store = configureStore(history);
 
 const Nav = (props: any) => (
 	<NavLink
@@ -35,25 +27,19 @@ const Heading = () => (
 );
 
 const Root = () => (
-    <Provider store={store}>
-        <ConnectedRouter history={history}>
-            <Heading/>
-            <Container fluid style={{ marginTop: '5rem' }}>
-                <Switch>
-                    <Route path="/" exact render={() => (<Redirect to="/encounter"/>)}/>
-                    <Route path="/encounter" render={() => <EncounterBuilder />} />
-                    <Route path="/about" render={() => <About />} />
-                </Switch>
-            </Container>
-        </ConnectedRouter>
-    </Provider>
+    <BrowserRouter>
+        <Heading/>
+        <Container fluid style={{ marginTop: '5rem' }}>
+                <Routes>
+                    <Route index element={<Navigate to="/encounter"/>} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/encounter" element={<EncounterBuilder />} />
+                </Routes>
+        </Container>
+    </BrowserRouter>
 );
 
 
-
-render(<Root />, document.getElementById("root"));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const container = document.getElementById("root");
+const root = createRoot(container!);
+root.render(<Root />);

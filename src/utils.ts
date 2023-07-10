@@ -46,7 +46,7 @@ export function calcDifficulty(encounter: EncounterState): DifficultyInfo {
 
     const xp_ratio = encounter.num_characters / 4;
     const xp = encounter.enemies
-        .flatMap(([e, c]) => Array(c).fill(e.cr))
+        .flatMap(({ npc, count }) => Array(count).fill(npc.cr))
         .map(l => xpDifficultyForEnemy(encounter.party_level, l))
         .reduce((sum, current) => sum + current, 0);
     return {

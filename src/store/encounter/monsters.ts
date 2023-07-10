@@ -1,4 +1,4 @@
-import { NpcInfo } from "./types";
+import { NpcInfo } from "../../types";
 
 export const monster_list : NpcInfo[] =
 [
