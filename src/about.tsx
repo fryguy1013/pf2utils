@@ -11,6 +11,10 @@ export const About = () =>
             paizo.com/communityuse. For more information about Paizo Publishing and Paizo products, please
             visit paizo.com.
         </Message>
+        <Message>
+            The data for this was derived from the <a href="https://github.com/foundryvtt/pf2e">PF2E system
+            for FoundryVTT</a>.
+        </Message>
     </Container>
 
 

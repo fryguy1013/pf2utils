@@ -16,9 +16,10 @@
         "typescript": "5.1.6"
     },
     "scripts": {
-      "start": "vite",
-      "build": "tsc && vite build",
-      "serve": "vite preview"
+        "start": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "generate": "esno parseFoundry.ts"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -26,6 +27,7 @@
     "homepage": "https://burntpopcorn.net/pf2utils/",
     "devDependencies": {
         "@vitejs/plugin-react": "^4.0.3",
+        "esno": "^0.17.0",
         "vite": "^4.4.2",
         "vite-plugin-svgr": "^3.2.0",
         "vite-tsconfig-paths": "^4.2.0"

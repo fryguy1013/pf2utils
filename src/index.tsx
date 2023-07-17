@@ -11,9 +11,7 @@ import { Menu, Header, Container } from "semantic-ui-react";
 
 const Nav = (props: any) => (
 	<NavLink
-		exact
 		{...props}
-		activeClassName="active"
 	/>
 );
 const Heading = () => (

@@ -11,8 +11,10 @@ export interface EncounterState {
 export interface NpcInfo {
     name: string;
     cr: number;
-    //size: string;
-    type: string;
+    size: string;
+    type: string[];
     //alignment: string;
-    source: string;
+    sources: {
+        [key: string]: string;
+    }
 }

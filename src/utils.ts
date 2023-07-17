@@ -19,7 +19,7 @@ export function calcXpBudget(num_players: number): XpBudget {
     };
 }
 
-function difficultyNameForXp(num_players: number, xp: number): string {
+export function difficultyNameForXp(num_players: number, xp: number): string {
     const xp_ratio = num_players / 4;
 
     if (xp === 0) return '';
@@ -30,7 +30,7 @@ function difficultyNameForXp(num_players: number, xp: number): string {
     return 'Extreme';
 }
 
-function xpDifficultyForEnemy(party_level: number, enemy_level: number): number {
+export function xpDifficultyForEnemy(party_level: number, enemy_level: number): number {
     if (enemy_level <= party_level - 4) return 10;
     if (enemy_level === party_level - 3) return 15;
     if (enemy_level === party_level - 2) return 20;

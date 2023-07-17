@@ -73,7 +73,7 @@ export function EncounterBuilder(props: Props) {
     return (
         <Grid columns={2}>
             <Grid.Row>
-                <Grid.Column width={6}>
+                <Grid.Column width={5}>
                     <GroupInfo
                         encounter={encounter}
                         setPartyLevel={setPartyLevel}
@@ -85,8 +85,8 @@ export function EncounterBuilder(props: Props) {
                         decreaseNpc={decreaseNpc}
                     />
                 </Grid.Column>
-                <Grid.Column width={10}>
-                    <MonsterList addNpc={addNpc} />
+                <Grid.Column width={11}>
+                    <MonsterList addNpc={addNpc} partyLevel={encounter.party_level}/>
                 </Grid.Column>
             </Grid.Row>
         </Grid>

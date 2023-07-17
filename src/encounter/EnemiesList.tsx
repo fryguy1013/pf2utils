@@ -68,7 +68,7 @@ export function EnemiesList(props: EnemiesListProps) {
                         </List.Content>
                         <List.Content verticalAlign="middle">
                             <Item.Header>{npc.name}</Item.Header>
-                            CR {npc.cr}
+                            Level {npc.cr}
                         </List.Content>
                     </List.Item>
                 ))}
