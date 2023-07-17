@@ -1,11 +1,10 @@
 import * as React from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserHistory } from 'history'
 import { About } from './about'
 import './site.css';
 
 import { Routes, Route, Navigate } from "react-router";
-import { BrowserRouter, NavLink } from "react-router-dom";
+import { HashRouter, NavLink } from "react-router-dom";
 import { EncounterBuilder } from "./encounter/EncounterBuilder";
 import { Menu, Header, Container } from "semantic-ui-react";
 
@@ -25,7 +24,7 @@ const Heading = () => (
 );
 
 const Root = () => (
-    <BrowserRouter basename="/pf2utils">
+    <HashRouter>
         <Heading/>
         <Container fluid style={{ marginTop: '5rem' }}>
                 <Routes>
@@ -34,7 +33,7 @@ const Root = () => (
                     <Route path="/encounter" element={<EncounterBuilder />} />
                 </Routes>
         </Container>
-    </BrowserRouter>
+    </HashRouter>
 );
 
 
