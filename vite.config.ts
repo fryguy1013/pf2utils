@@ -5,5 +5,6 @@ import svgrPlugin from "vite-plugin-svgr";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    base: "pf2utils",
     plugins: [react(), viteTsconfigPaths(), svgrPlugin()],
 });

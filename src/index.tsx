@@ -25,7 +25,7 @@ const Heading = () => (
 );
 
 const Root = () => (
-    <BrowserRouter>
+    <BrowserRouter basename="/pf2utils">
         <Heading/>
         <Container fluid style={{ marginTop: '5rem' }}>
                 <Routes>
